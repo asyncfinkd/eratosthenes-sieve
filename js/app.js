@@ -33,5 +33,5 @@ class App {
   }
 }
 
-const myApp = new App("Nika", 2005);
+const myApp = new App(100);
 myApp.Application();
