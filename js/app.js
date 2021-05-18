@@ -1,20 +1,37 @@
-let __num = [], __n = 100, __i = 0, __s = 2, __f = 1;
+class App {
+  constructor(num) {
+    this.num = num;
+  }
 
-for(let i = __i; i <= __n; i++) {
-  __num.push(i);
-}
+  printSieveNumber(i) {
+    console.log(i);
+  }
 
-if(__num.length > __i && typeof __num !== "undefined") {
-for(let __k = __s; __k <= __n; __k++) {
-  if(__num[__k] === __f){ 
-    continue;
-  } else {
-    console.log(__k);
-    if(typeof __k === "number" && typeof __k !== "undefined") {
-      for(let __j = __k * __k; __j <= __n; __j = __j + __k) {
-      __num[__j] = __f;
+  fillArray(number) {
+    for(let k=0;k<=100;k++) {
+      number.push(k);
+    }
+  }
+
+  CalculateSieve(number = [], num = 100) {
+    this.fillArray(number);
+
+    for(let i=2;i<=num;i++) {
+      if(number[i]===1) {
+        continue;
+      } else {
+        this.printSieveNumber(i);
+        for(let j=i*i;j<=num;j=j+i){
+          number[j]=1;
+        }
       }
     }
   }
+
+  Application() {
+     this.CalculateSieve();
+  }
 }
-}
+
+const myApp = new App("Nika", 2005);
+myApp.Application();
