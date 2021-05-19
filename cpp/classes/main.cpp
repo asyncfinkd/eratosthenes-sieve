@@ -2,29 +2,23 @@
 using namespace std;
 
 class Sieve {
-
 	private:
 		long long n = 1;
 		int Number;
-	
 	public:
 		void setNumber(long long n=1) {
 			this->n=n;
 		}
-		
 		void inputNumber(int n=1) {
 			cout << "Sheiyvanet Ricxvi: "; cin>>n;
 			this->Number=n;
 		}
-		
 		void printNumber() {
 			cout << "raodenoba: "<<Number<<endl;
 		}
-		
 		int getNumber() {
 			return this->Number;
 		}
-		
 		void printArray() {
 			int newArray[getNumber()];
 			for(int i=2;i<=getNumber();i++) {
@@ -38,7 +32,6 @@ class Sieve {
 				}
 			}
 		}
-	
 };
 
 int main(int argc, char** argv) {
